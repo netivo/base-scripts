@@ -1,0 +1,16 @@
+{
+  "name": "@netivo/base-scripts",
+  "version": "1.0.0",
+  "description": "Basic javascript and scss styles for building pages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netivo/base-scripts.git"
+  },
+  "main": "index.js",
+  "author": "Netivo <biuro@netivo.pl> (http://netivo.pl)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/netivo/base-scripts/issues"
+  },
+  "homepage": "https://github.com/netivo/base-scripts#readme"
+}
