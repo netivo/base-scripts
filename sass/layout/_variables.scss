@@ -1,0 +1,14 @@
+:root{
+  --body-background: $color_white;
+  --default-font-color: $color_black;
+  --default-font-size: $font_size;
+  --default-font-weight: $font_weight;
+  --default-font-family: $font_family;
+  --default-line-height: $font_line_height;
+
+  --hyperlink-color: $color_blue;
+  --hyperlink-hover-color: $color__light_blue;
+  --hyperlink-focus-color: $color_blue;
+  --hyperlink-visited-color: $color_blue;
+  --hyperlink-active-color: $color_blue;
+}

@@ -1,0 +1,69 @@
+@each $respons in $responsive{
+  $responsive-name: nth($respons, 1);
+  $resolution: nth($respons, 2);
+  @if not $responsive-name{
+    .grid {
+      display: grid;
+      grid-template-columns: repeat($grid-columns, 1fr);
+      @for $i from 1 through $grid-columns {
+        @for $j from $i through $grid-columns {
+          & &__cell-#{$i}-#{$j} {
+            grid-column: #{$i} / #{$j+1};
+            grid-row: 1/2;
+          }
+        }
+        & &__cell--nr-#{$i}{
+          grid-row: #{$i+1}/#{$i+2};
+        }
+      }
+
+      & &__cell--vertical-center {
+        align-self: center;
+      }
+      & &__cell--vertical-left {
+        justify-self: start;
+      }
+      & &__cell--vertical-right {
+        justify-self: end;
+      }
+      & &__cell--horizontal-left {
+        text-align: left;
+      }
+      & &__cell--horizontal-center {
+        text-align: center;
+      }
+      & &__cell--horizontal-right {
+        text-align: right;
+      }
+      &#{&}--space-between {
+        align-content: space-between;
+      }
+    }
+  } @else{
+    @media (max-width: $resolution) {
+      .grid {
+        & &__cell-#{$responsive-name} {
+          @for $i from 1 through $grid-columns {
+            @for $j from $i through $grid-columns {
+              &-#{$i}-#{$j} {
+                grid-column: #{$i} / #{$j+1};
+                grid-row: 1/2;
+              }
+            }
+          }
+          @for $i from 1 through $grid-columns {
+            &--nr-#{$i}{
+              grid-row: #{$i+1}/#{$i+2};
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+@media(max-width: 576px){
+  .grid{
+    display: block;
+  }
+}

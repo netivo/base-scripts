@@ -1,0 +1,13 @@
+.container{
+  width: $container_width;
+  padding-left: $container_padding;
+  padding-right: $container_padding;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (max-width: $container_width){
+  .container {
+    width: calc(100% - (2 * #{$container_padding}));
+  }
+}

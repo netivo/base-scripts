@@ -1,0 +1,26 @@
+$container_width: 1200px;
+$container_padding: 15px;
+
+$padding-default: 50px;
+$grid-columns: 12;
+$paddings: (
+                (large, 4),
+                (medium, 2),
+                (small, 0.5),
+                (no, 0)
+);
+$responsive: (
+                (false, 0, 50px),
+                (xl, 1366px, 50px),
+                (l, 1200px, 40px),
+                (m, 1000px, 20px),
+                (s, 768px, 10px),
+);
+$directions: (
+                (false, (padding-top, padding-bottom)),
+                (top, (padding-top)),
+                (bottom, (padding-bottom)),
+                (sides, (padding-left, padding-right)),
+                (left, (padding-left)),
+                (right, (padding-right))
+);

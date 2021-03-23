@@ -1,0 +1,15 @@
+@mixin container($type: ''){
+  @if $type == '' {
+    width: $container_width;
+    padding-left: $container_padding;
+    padding-right: $container_padding;
+    margin-left: auto;
+    margin-right: auto;
+  } @else {
+    width: calc(100% - 2 * #{$container_padding});
+    padding-left: $container_padding;
+    padding-right: $container_padding;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

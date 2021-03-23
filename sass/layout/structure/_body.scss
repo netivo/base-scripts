@@ -1,0 +1,12 @@
+body{
+  background: var(--body-background);
+  color: var(--default-font-color);
+  font-size: var(--default-font-size);
+  font-weight: var(--default-font-weight);
+  font-family: var(--default-font-family);
+  line-height: var(--default-line-height);
+  min-width:100%;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
