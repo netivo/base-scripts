@@ -8,7 +8,7 @@ let defaultOptions = {
             resolve({});
         });
     },
-    beforeSubmit: form => {},
+    beforeSubmit: form => { return true; },
     success: (form, response) => {},
     error: (form, error) => {}
 }
@@ -24,19 +24,21 @@ class Form  {
 
     _submitForm(event){
         if(typeof event !== 'undefined') event.preventDefault();
-        this.options.beforeSubmit(this.selector);
+        let cont = this.options.beforeSubmit(this.selector);
 
-        this.options.data(this.selector).then(data => {
-            this._sendForm(this.options.action, data)
-                .then(response => {
-                    this.options.success(this.selector, response);
-                })
-                .catch(error => {
-                    this.options.error(this.selector, error);
-                })
-        }).catch(error => {
-            this.options.error(this.selector, error);
-        });
+        if(cont) {
+            this.options.data(this.selector).then(data => {
+                this._sendForm(this.options.action, data)
+                    .then(response => {
+                        this.options.success(this.selector, response);
+                    })
+                    .catch(error => {
+                        this.options.error(this.selector, error);
+                    })
+            }).catch(error => {
+                this.options.error(this.selector, error);
+            });
+        }
     }
 
     _sendForm(url, data) {
