@@ -2,6 +2,7 @@ a{
   color: var(--hyperlink-color);
   font-size: 1em;
   text-decoration: none;
+  transition: 300ms;
   &:hover{
     color: var(--hyperlink-hover-color);
     text-decoration: none;
@@ -9,13 +10,25 @@ a{
   &:focus{
     color: var(--hyperlink-focus-color);
     text-decoration: none;
+    &:hover{
+      color: var(--hyperlink-hover-color);
+      text-decoration: none;
+    }
   }
   &:visited{
     color: var(--hyperlink-visited-color);
     text-decoration: none;
+    &:hover{
+      color: var(--hyperlink-hover-color);
+      text-decoration: none;
+    }
   }
   &:active{
     color: var(--hyperlink-active-color);
     text-decoration: none;
+    &:hover{
+      color: var(--hyperlink-hover-color);
+      text-decoration: none;
+    }
   }
 }
