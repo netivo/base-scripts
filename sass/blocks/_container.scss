@@ -1,13 +1,15 @@
+@use './../helpers/variables/blocks' as blocks;
+
 .container{
-  width: $container_width;
-  padding-left: $container_padding;
-  padding-right: $container_padding;
+  width: blocks.$container_width;
+  padding-left: blocks.$container_padding;
+  padding-right: blocks.$container_padding;
   margin: 0 auto;
   position: relative;
 }
 
-@media screen and (max-width: ($container_width + (2 * $container_padding))){
+@media screen and (max-width: (blocks.$container_width + (2 * blocks.$container_padding))){
   .container {
-    width: calc(100% - (2 * #{$container_padding}));
+    width: calc(100% - (2 * #{blocks.$container_padding}));
   }
 }

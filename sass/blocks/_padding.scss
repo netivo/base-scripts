@@ -1,3 +1,5 @@
+@use './../helpers/variables/blocks' as blocks;
+
 @mixin print-modifiers($modifiers, $attributes, $default, $modifier: true){
   @each $attribute in $attributes{
     #{$attribute}: $default;
@@ -21,36 +23,36 @@
     }
   }
 }
-@each $respons in $responsive{
+@each $respons in blocks.$responsive{
   $responsive-name: nth($respons, 1);
   $resolution: nth($respons, 2);
   $default: nth($respons, 3);
   @if not $responsive-name{
-    @each $direction in $directions {
+    @each $direction in blocks.$directions {
       $direction-name: nth($direction, 1);
       $attributes: nth($direction, 2);
       @if not $direction-name{
         .padding{
-          @include print-modifiers($paddings, $attributes, $default);
+          @include print-modifiers(blocks.$paddings, $attributes, $default);
         }
       } @else{
         .padding-#{$direction-name}{
-          @include print-modifiers($paddings, $attributes, $default);
+          @include print-modifiers(blocks.$paddings, $attributes, $default);
         }
       }
     }
   } @else{
     @media (max-width: $resolution) {
-      @each $direction in $directions {
+      @each $direction in blocks.$directions {
         $direction-name: nth($direction, 1);
         $attributes: nth($direction, 2);
         @if not $direction-name {
           .padding.padding--#{$responsive-name}{
-            @include print-modifiers($paddings, $attributes, $default, false);
+            @include print-modifiers(blocks.$paddings, $attributes, $default, false);
           }
         } @else {
           .padding-#{$direction-name}.padding-#{$direction-name}--#{$responsive-name}{
-            @include print-modifiers($paddings, $attributes, $default, false);
+            @include print-modifiers(blocks.$paddings, $attributes, $default, false);
           }
         }
       }

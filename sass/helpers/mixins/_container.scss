@@ -1,14 +1,16 @@
+@use './../variables/blocks' as blocks;
+
 @mixin container($type: ''){
   @if $type == '' {
-    width: $container_width;
-    padding-left: $container_padding;
-    padding-right: $container_padding;
+    width: blocks.$container_width;
+    padding-left: blocks.$container_padding;
+    padding-right: blocks.$container_padding;
     margin-left: auto;
     margin-right: auto;
   } @else {
-    width: calc(100% - 2 * #{$container_padding});
-    padding-left: $container_padding;
-    padding-right: $container_padding;
+    width: calc(100% - 2 * #{blocks.$container_padding});
+    padding-left: blocks.$container_padding;
+    padding-right: blocks.$container_padding;
     margin-left: auto;
     margin-right: auto;
   }

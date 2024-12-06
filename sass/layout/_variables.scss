@@ -1,14 +1,16 @@
-:root{
-  --body-background: #{$color_white};
-  --default-font-color: #{$color_black};
-  --default-font-size: #{$font_size};
-  --default-font-weight: #{$font_weight};
-  --default-font-family: #{$font_family};
-  --default-line-height: #{$font_line_height};
+@use './../helpers/variables/structure' as structure;
 
-  --hyperlink-color: #{$color_blue};
-  --hyperlink-hover-color: #{$color__light_blue};
-  --hyperlink-focus-color: #{$color_blue};
-  --hyperlink-visited-color: #{$color_blue};
-  --hyperlink-active-color: #{$color_blue};
+:root{
+  --body-background: #{structure.$color_white};
+  --default-font-color: #{structure.$color_black};
+  --default-font-size: #{structure.$font_size};
+  --default-font-weight: #{structure.$font_weight};
+  --default-font-family: #{structure.$font_family};
+  --default-line-height: #{structure.$font_line_height};
+
+  --hyperlink-color: #{structure.$color_blue};
+  --hyperlink-hover-color: #{structure.$color__light_blue};
+  --hyperlink-focus-color: #{structure.$color_blue};
+  --hyperlink-visited-color: #{structure.$color_blue};
+  --hyperlink-active-color: #{structure.$color_blue};
 }
